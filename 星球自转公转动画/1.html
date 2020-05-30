@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // console.log(typeof null);
+        // console.log(typeof Person);
+
+        var func=(function (a) {
+            this.a=a;
+            return function (a){
+                a+=this.a;
+                return a;
+            }
+        })(function (a,b){
+            return a;
+        })(1,2);
+        console.log(func(4));
+
+    </script>
+</body>
+</html>

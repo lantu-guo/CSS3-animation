@@ -1,0 +1,214 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+.clock,.min-box,.circle,.circle li,.hours,.second,.minites,#watches{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+}
+.clock{
+    width: 1000px;
+    height: 1000px;
+    border-radius: 10%;
+    background-color: #333;
+}
+.min-box{
+    width: 900px;
+    height: 900px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.circle{
+    width: 100%;
+    height: 100%;
+}
+.circle li{
+    width: 100px;
+    height: 900px;  
+    /* background-color: red; */
+}
+/* 钟表上的数字 */
+.circle li:nth-child(1){  
+   transform: rotate(30deg);
+}
+.circle li:nth-child(1):before{
+    content: "1";
+    font-size: 70px;
+    position: absolute;
+    left: 0;
+    transform: rotate(-30deg);
+}
+.circle li:nth-child(1)::after{
+    content: "7";
+    font-size: 70px;
+    position: absolute;
+    bottom: 0;
+    transform: rotate(-30deg);
+}
+.circle li:nth-child(2){  
+    transform: rotate(60deg);
+ }
+ .circle li:nth-child(2):before{
+     content: "2";
+     font-size: 70px;
+     position: absolute;
+     left: 0;
+     transform: rotate(-60deg);
+ }
+ .circle li:nth-child(2)::after{
+     content: "8";
+     font-size: 70px;
+     position: absolute;
+     bottom: 0;
+     transform: rotate(-60deg);
+ }
+ .circle li:nth-child(3){  
+    transform: rotate(90deg);
+ }
+ .circle li:nth-child(3):before{
+     content: "3";
+     font-size: 70px;
+     position: absolute;
+     left: 0;
+     transform: rotate(-90deg);
+ }
+ .circle li:nth-child(3)::after{
+     content: "9";
+     font-size: 70px;
+     position: absolute;
+     bottom: 0;
+     transform: rotate(-90deg);
+ }
+ .circle li:nth-child(4){  
+    transform: rotate(120deg);
+ }
+ .circle li:nth-child(4):before{
+     content: "4";
+     font-size: 70px;
+     position: absolute;
+     left: 0;
+     transform: rotate(-120deg);
+ }
+ .circle li:nth-child(4)::after{
+     content: "10";
+     font-size: 70px;
+     position: absolute;
+     bottom: 0;
+     transform: rotate(-120deg);
+ }
+ .circle li:nth-child(5){  
+    transform: rotate(150deg);
+ }
+ .circle li:nth-child(5):before{
+     content: "5";
+     font-size: 70px;
+     position: absolute;
+     left: 0;
+     transform: rotate(-150deg);
+ }
+ .circle li:nth-child(5)::after{
+     content: "11";
+     font-size: 70px;
+     position: absolute;
+     bottom: 0;
+     transform: rotate(-150deg);
+ }
+ .circle li:nth-child(6){  
+    transform: rotate(180deg);
+ }
+ .circle li:nth-child(6):before{
+     content: "6";
+     font-size: 70px;
+     position: absolute;
+     left: 0;
+     transform: rotate(-180deg);
+ }
+ .circle li:nth-child(6)::after{
+     content: "12";
+     font-size: 70px;
+     position: absolute;
+     bottom: 0;
+     transform: rotate(-180deg);
+ }
+ /* 钟表上的指针 */
+ /* 时针 */
+ .hours{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #333;
+    z-index: 2;
+    animation: run 43200s linear infinite;
+ }
+ .hours::after{
+    content: "";
+    width: 200px;
+    height: 20px;
+    left: -16px;
+    top: 12px;
+    border-radius: 30%;
+    position: absolute;
+    background-color: #333;
+ }
+ /* 分针 */
+ .minites{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: blue;
+    animation: run 3600s linear infinite;
+ }
+ .minites::after{
+    content: "";
+    width: 300px;
+    height: 20px;
+    left: -16px;
+    top: 12px;
+    border-radius: 30%;
+    position: absolute;
+    background-color: blue;
+ }
+ /* 秒针 */
+ .second{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: red;
+    animation: run 60s linear infinite;
+ }
+ .second::after{
+    content: "";
+    width: 400px;
+    height: 20px;
+    left: -16px;
+    top: 12px;
+    border-radius: 30%;
+    position: absolute;
+    background-color: red;
+ }
+/* 显示的本机时间 */
+#watches{
+    width: 400px;
+    height: 150px;
+    background-color: #eee;
+    position: absolute;
+    top: -300px;
+    font-size: 80px;
+    text-align: center;
+    line-height: 150px;
+}
+
+ /* 动画 */
+@keyframes run{
+    from{ }
+    to{
+        transform: rotate(360deg);
+    }
+}
